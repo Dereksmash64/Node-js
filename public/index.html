@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plataforma Música - Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:900px; margin: 20px auto; }
+    form { margin-bottom: 20px; }
+    table { width:100%; border-collapse: collapse; margin-top: 12px; }
+    td, th { border: 1px solid #ddd; padding: 8px; }
+    audio { width: 200px; }
+    .token-area { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Plataforma Música (Demo)</h1>
+
+  <section>
+    <h2>Registro / Login</h2>
+    <div>
+      <input id="name" placeholder="Nombre" />
+      <input id="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="btn-register">Registrar</button>
+      <button id="btn-login">Login</button>
+    </div>
+    <p class="token-area">Token: <span id="tokenText">ninguno</span></p>
+  </section>
+
+  <section>
+    <h2>Subir canción (POST) — necesita token</h2>
+    <form id="uploadForm">
+      <input name="title" id="title" placeholder="Título" required />
+      <input name="artist" id="artist" placeholder="Artista" required />
+      <input type="file" name="mp3" id="mp3" accept=".mp3" required />
+      <button type="submit">Subir Canción</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Canciones (GET)</h2>
+    <button id="btn-refresh">Actualizar lista</button>
+    <table id="songsTable">
+      <thead>
+        <tr><th>Título</th><th>Artista</th><th>Uploader</th><th>Audio</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
